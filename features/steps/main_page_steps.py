@@ -2,6 +2,8 @@
 
 from behave import given, when, then
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
 
 SEARCH_FIELD = (By.ID, 'twotabsearchtextbox')
 SEARCH_BTN = (By.ID, 'nav-search-submit-button')
@@ -12,6 +14,7 @@ BEST_SELLERS_LINKS = (By.XPATH,'//div[starts-with(@class, "_p13n-zg-nav-tab-all_
 FIRST_PRODUCT = (By.XPATH,'//div[@class= "p13n-sc-truncate-desktop-type2  p13n-sc-truncated"]')
 ADD_TO_CART_BTN = (By.ID,'add-to-cart-button')
 ADDED_TO_CART_TEXT = (By.XPATH,"//span[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']")
+SIGNIN_BTN = (By.CSS_SELECTOR, '#nav-signin-tooltip .nav-action-signin-button')
 
 
 @given('Open Amazon page')
@@ -43,6 +46,14 @@ def click_on_first_product(context):
 @when('Click on Add to cart button')
 def click_on_add_to_cart_button(context):
     context.driver.find_element(*ADD_TO_CART_BTN).click()
+
+
+@when('Click on button from SignIn popup')
+def click_signin_from_popup(context):
+    context.driver.wait.until(
+        EC.element_to_be_clickable(SIGNIN_BTN),
+        message='SignIn btn from popup not clickable'
+    ).click()
 
 
 @then('Verify footer has {expected_amount} links')
