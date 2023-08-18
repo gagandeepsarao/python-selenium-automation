@@ -33,3 +33,4 @@ driver.find_element(By.XPATH, "//a[contains(text(), 't Seller') and @class='nav-
 
 # //parent[...]//child[...]
 driver.find_element(By.XPATH, "//div[@id='nav-belt']//input[@placeholder='Search Amazon']")
+
