@@ -43,9 +43,9 @@ def click_on_first_product(context):
     context.driver.find_element(*FIRST_PRODUCT).click()
 
 
-@when('Click on Add to cart button')
-def click_on_add_to_cart_button(context):
-    context.driver.find_element(*ADD_TO_CART_BTN).click()
+# @when('Click on Add to cart button')
+# def click_on_add_to_cart_button(context):
+#     context.driver.find_element(*ADD_TO_CART_BTN).click()
 
 
 @when('Click on button from SignIn popup')
@@ -78,3 +78,5 @@ def verify_five_links_are_present(context):
 @then('Verify "Added to Cart" text is displayed on the page')
 def verify_added_to_cart_text_displayed(context):
     context.driver.find_element(*ADDED_TO_CART_TEXT).click()
+
+
