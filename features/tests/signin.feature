@@ -9,3 +9,8 @@ Feature: Sigin tests
     Given Open Amazon page
     When Click on button from SignIn popup
     Then Verify sign in page opened
+
+  Scenario: Logged out user sees Sign in page when clicking Orders
+ Given Open Amazon page
+ When Click Amazon Orders link
+ Then Verify Sign In page is opened

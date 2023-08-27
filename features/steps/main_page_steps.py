@@ -21,8 +21,8 @@ def search_on_amazon(context, product):
     context.app.header.search_product(product)
 
 
-@when('Click Orders')
-def click_orders(context):
+@when('Click Amazon Orders link')
+def click_amazon_orders(context):
     context.driver.find_element(*ORDERS_BTN).click()
 
 
