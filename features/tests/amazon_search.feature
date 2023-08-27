@@ -27,6 +27,7 @@ Feature: Tests for amazon search
     |coffee           |"coffee"         |
     |forks            |"forks"          |
 
+    #HomeWork 7 Question2
   Scenario: User can add a product to the cart
     Given Open Amazon page
     When Search for Tritan Farm to Table Pitcher on amazon
