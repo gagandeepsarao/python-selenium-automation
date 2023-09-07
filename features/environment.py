@@ -11,11 +11,11 @@ def browser_init(context, scenario_name):  # add scenario_name if you want to us
     """
     :param context: Behave context
     """
-    service = Service(executable_path=r"C:\Users\gagan\Documents\python-selenium-automation\chromedriver-win64\chromedriver.exe")
-    context.driver = webdriver.Chrome(service=service)
+    #service = Service(executable_path=r"C:\Users\gagan\Documents\python-selenium-automation\chromedriver-win64\chromedriver.exe")
+    #context.driver = webdriver.Chrome(service=service)
 
     ### OTHER BROWSERS ###
-    # service = Service(executable_path='/Users/svetlanalevinsohn/careerist/15-python-selenium-automation/geckodriver')
+    # service = Service(executable_path=r"C:\Users\gagan\Documents\python-selenium-automation\chromedriver-win64\firefoxdriver\geckodriver.exe")
     # context.driver = webdriver.Firefox(service=service)
     # context.driver = webdriver.Safari()
 
@@ -29,20 +29,20 @@ def browser_init(context, scenario_name):  # add scenario_name if you want to us
     # )
 
     ### BROWSERSTACK ###
-    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    # bs_user = ''
-    # bs_key = ''
-    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-    #
-    # options = Options()
-    # bstack_options = {
-    #     'os': 'Windows',
-    #     'osVersion': '10',
-    #     'browserName': 'Firefox',
-    #     'sessionName': scenario_name
-    # }
-    # options.set_capability('bstack:options', bstack_options)
-    # context.driver = webdriver.Remote(command_executor=url, options=options)
+    #Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+    bs_user = 'g*********_QczjXx'
+    bs_key = 'D4pK7fSayxnLL*****'
+    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+
+    options = Options()
+    bstack_options = {
+        'os': 'Windows',
+        'osVersion': '10',
+        'browserName': 'Firefox',
+        'sessionName': scenario_name
+    }
+    options.set_capability('bstack:options', bstack_options)
+    context.driver = webdriver.Remote(command_executor=url, options=options)
 
 
     context.driver.maximize_window()

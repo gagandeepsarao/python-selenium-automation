@@ -4,6 +4,7 @@ from pages.search_result_page import SearchResultPage
 from pages.main_page import MainPage
 from pages.cart_page import CartPage
 from pages.product_page import  ProductPage
+from pages.amazon_privacy import  Amazon_privacy
 
 
 class Application:
@@ -14,3 +15,4 @@ class Application:
         self.search_result_page = SearchResultPage(driver)
         self.cart_page = CartPage(driver)
         self.product_page = ProductPage(driver)
+        self.amazon_privacy = Amazon_privacy(driver)
